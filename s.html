@@ -1,0 +1,2593 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
+<style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", "SF Pro", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p *, #write.first-line-indent svg * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-width: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-size-adjust: inherit; font-kerning: inherit; font-variant-alternates: inherit; font-variant-ligatures: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-feature-settings: inherit; font-optical-sizing: inherit; font-variation-settings: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; }
+svg sub, svg sup { position: static; }
+.nodeLabel p { padding-right: 2px; padding-left: 2px; }
+.typora-export .nodeLabel p { padding-right: 0px; padding-left: 0px; }
+foreignObject { overflow: visible; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+li p { orphans: 1; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { -webkit-user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: medium; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: medium; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+</style>
+<style type='text/css'  id="style-codemirror">.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: medium !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: medium; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: medium; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+</style>
+<style type='text/css'  id="style-theme_css">html {
+    font-size: 16px;
+    font-family: "LXGW WenKai"
+}
+
+#write {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 15px;
+    line-height: 2.25;
+    color: #000;
+    letter-spacing: 1.1px;
+    word-break: break-word;
+    word-wrap: break-word;
+    text-align: left;
+    position: relative;
+    z-index: 0
+}
+
+#write::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-color: var(--element-color);
+    opacity: .12;
+    -webkit-mask-image: var(--bg-style);
+    mask-image: var(--bg-style);
+    -webkit-mask-size: 20px 20px;
+    mask-size: 20px 20px;
+    -webkit-mask-repeat: repeat;
+    mask-repeat: repeat;
+    -webkit-mask-position: center;
+    mask-position: center
+}
+
+#write p {
+    color: #333;
+    margin: 10px 10px;
+    font-family: Optima-Regular, Optima, "LXGW WenKai", PingFangSC-light, PingFangTC-light, "PingFang SC", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-size: 1rem;
+    word-spacing: 2px
+}
+
+#write h3.md-heading:after,
+h4.md-heading:after,
+h5.md-heading:after,
+h6.md-heading:after {
+    content: " ";
+    display: inline-block;
+    height: 2em;
+    width: 2em;
+    vertical-align: top;
+    margin-left: -2px;
+    background-color: var(--element-color-shallow);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: 24px 24px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 24px 24px
+}
+
+#write h3.md-heading:after {
+    -webkit-mask-image: var(--h3-icon-shape);
+    mask-image: var(--h3-icon-shape)
+}
+
+#write h4.md-heading:after {
+    -webkit-mask-image: var(--h4-icon-shape);
+    mask-image: var(--h4-icon-shape)
+}
+
+#write h5.md-heading:after {
+    -webkit-mask-image: var(--h5-icon-shape);
+    mask-image: var(--h5-icon-shape)
+}
+
+#write h6.md-heading:after {
+    -webkit-mask-image: var(--h6-icon-shape);
+    mask-image: var(--h6-icon-shape)
+}
+
+#write h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 1em auto .8em;
+    line-height: 1.4;
+    width: fit-content;
+    min-width: 120px;
+    min-height: 1.4em;
+    color: #222;
+    position: relative;
+    padding-bottom: 12px;
+    transition: color .3s ease, transform .3s ease;
+    border-bottom: none
+}
+
+#write h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 40px;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--head-title-h2-background);
+    background-size: 100% auto;
+    transform: translateX(-50%);
+    transition: width .4s cubic-bezier(.25, .8, .25, 1)
+}
+
+#write h1:not(.md-focus):hover {
+    color: var(--head-title-color);
+    transform: translateY(-2px)
+}
+
+#write h1.md-focus::after,
+#write h1:focus::after,
+#write h1:hover::after {
+    width: 100%
+}
+
+#write h2 {
+    color: var(--head-title-h2-color);
+    font-size: 1.4rem;
+    line-height: 1.5;
+    width: fit-content;
+    font-weight: 700;
+    margin: 20px 0;
+    padding: 5px 12px;
+    border-radius: 8px;
+    background: var(--head-title-h2-background);
+    background-size: 200% auto;
+    background-position: 0 center;
+    box-shadow: 0 2px 5px rgba(61, 184, 211, .15);
+    transition: background-position .5s ease-out, transform .4s ease, box-shadow .4s ease
+}
+
+#write h2:hover {
+    background-position: 100% center;
+    transform: scale(1.01);
+    box-shadow: 0 8px 20px rgba(61, 184, 211, .35)
+}
+
+#write h3 {
+    position: relative;
+    width: fit-content;
+    margin: 20px 0;
+    text-align: left;
+    font-size: 1.3rem;
+    padding-left: 10px;
+    transition: all .3s cubic-bezier(.25, .8, .25, 1)
+}
+
+#write h3 {
+    position: relative;
+    width: fit-content;
+    margin: 20px 0;
+    text-align: left;
+    font-size: 1.3rem;
+    padding-left: 10px;
+    transition: all .3s cubic-bezier(.25, .8, .25, 1)
+}
+
+#write h3::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 61%;
+    border-radius: 4px;
+    background-color: var(--head-title-color);
+    transition: all .3s cubic-bezier(.25, .8, .25, 1)
+}
+
+#write h3 span {
+    border-bottom: 2px hidden var(--head-title-color);
+    transition: color .3s ease
+}
+
+#write h3:hover {
+    padding-left: 18px;
+    color: var(--head-title-color);
+    cursor: pointer
+}
+
+#write h3:hover::before {
+    height: 66%;
+    background-color: var(--head-title-color);
+    width: 7px
+}
+
+#write h4,
+#write h5,
+#write h6 {
+    transition: color .3s ease, transform .3s ease
+}
+
+#write h4::before,
+#write h5::before,
+#write h6::before {
+    transition: all .3s cubic-bezier(.34, 1.56, .64, 1)
+}
+
+#write h4 {
+    margin: 20px 0;
+    font-size: 1.15rem;
+    text-align: left
+}
+
+#write h4::before {
+    content: "";
+    margin-right: 7px;
+    display: inline-block;
+    background-color: var(--head-title-color);
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: var(--head-title-color) 1px solid;
+    vertical-align: inherit
+}
+
+#write h4:hover::before {
+    transform: scale(1.3);
+    box-shadow: 0 0 0 4px var(--element-color-soo-shallow)
+}
+
+#write h5 {
+    margin: 23px 0;
+    font-size: 1.1rem;
+    text-align: left
+}
+
+#write h5::before {
+    content: "";
+    margin-right: 7px;
+    display: inline-block;
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: var(--head-title-color) 2px solid;
+    vertical-align: inherit;
+    box-sizing: border-box
+}
+
+#write h5:hover::before {
+    background-color: var(--head-title-color);
+    transform: scale(1.2);
+    box-shadow: 0 0 0 3px var(--element-color-soo-shallow)
+}
+
+#write h6 {
+    margin: 23px 0;
+    font-size: 1.1rem;
+    text-align: left
+}
+
+#write h6::before {
+    content: "-";
+    color: var(--head-title-color);
+    margin-right: 7px;
+    display: inline-block;
+    vertical-align: inherit
+}
+
+#write h6:hover::before {
+    transform: scaleX(1.8) translateX(1px);
+    font-weight: 700
+}
+
+#write h4:hover,
+#write h5:hover,
+#write h6:hover {
+    color: var(--element-color-deep);
+    transform: translateX(6px)
+}
+
+#write {
+    counter-reset: h1
+}
+
+h1 {
+    counter-reset: h2
+}
+
+h2 {
+    counter-reset: h3
+}
+
+h3 {
+    counter-reset: h4
+}
+
+h4 {
+    counter-reset: h5
+}
+
+h5 {
+    counter-reset: h6
+}
+
+.sidebar-content {
+    counter-reset: h1
+}
+
+.outline-content {
+    counter-reset: h1
+}
+
+.outline-h1 {
+    counter-reset: h2
+}
+
+.outline-h2 {
+    counter-reset: h3
+}
+
+.outline-h3 {
+    counter-reset: h4
+}
+
+.outline-h4 {
+    counter-reset: h5
+}
+
+.outline-h5 {
+    counter-reset: h6
+}
+
+.md-toc-content {
+    counter-reset: h1toc
+}
+
+.md-toc-h1 {
+    counter-reset: h2toc
+}
+
+.md-toc-h2 {
+    counter-reset: h3toc
+}
+
+.md-toc-h3 {
+    counter-reset: h4toc
+}
+
+.md-toc-h4 {
+    counter-reset: h5toc
+}
+
+.md-toc-h5 {
+    counter-reset: h6toc
+}
+
+#write h1:before {
+    counter-increment: h1;
+    content: var(--autonum-h1)
+}
+
+#outline-content li.outline-h1>div>span.outline-label:before {
+    counter-increment: h1;
+    content: var(--autonum-h1)
+}
+
+.outline-content .outline-h1>.outline-item>.outline-label:before {
+    counter-increment: h1;
+    content: var(--autonum-h1)
+}
+
+#write span.md-toc-item.md-toc-h1>a:before {
+    counter-increment: h1toc;
+    content: var(--autonum-h1toc)
+}
+
+#write h2:before {
+    counter-increment: h2;
+    content: var(--autonum-h2);
+    color: var(--head-title-h2-color)
+}
+
+.outline-content .outline-h2>.outline-item>.outline-label:before {
+    counter-increment: h2;
+    content: var(--autonum-h2)
+}
+
+li.outline-h2>div>a.outline-label:before {
+    counter-increment: h2;
+    content: var(--autonum-h2)
+}
+
+#write span.md-toc-item.md-toc-h2>a:before {
+    counter-increment: h2toc;
+    content: var(--autonum-h2toc)
+}
+
+#write h3>span:first-of-type::before {
+    counter-increment: h3;
+    content: var(--autonum-h3);
+    color: var(--element-color)
+}
+
+#outline-content li.outline-h3>div>span.outline-label:before {
+    counter-increment: h3;
+    content: var(--autonum-h3)
+}
+
+.outline-content .outline-h3>.outline-item>.outline-label:before {
+    counter-increment: h3;
+    content: var(--autonum-h3)
+}
+
+#write span.md-toc-item.md-toc-h3>a:before {
+    counter-increment: h3toc;
+    content: var(--autonum-h3toc)
+}
+
+#write h4>span:first-of-type::before {
+    counter-increment: h4;
+    content: var(--autonum-h4);
+    color: var(--element-color)
+}
+
+#outline-content li.outline-h4>div>span.outline-label:before {
+    counter-increment: h4;
+    content: var(--autonum-h4)
+}
+
+.outline-content .outline-h4>.outline-item>.outline-label:before {
+    counter-increment: h4;
+    content: var(--autonum-h4)
+}
+
+#write span.md-toc-item.md-toc-h4>a:before {
+    counter-increment: h4toc;
+    content: var(--autonum-h4toc)
+}
+
+#write h5>span:first-of-type::before {
+    counter-increment: h5;
+    content: var(--autonum-h5);
+    color: var(--element-color)
+}
+
+#outline-content li.outline-h5>div>span.outline-label:before {
+    counter-increment: h5;
+    content: var(--autonum-h5)
+}
+
+.outline-content .outline-h5>.outline-item>.outline-label:before {
+    counter-increment: h5;
+    content: var(--autonum-h5)
+}
+
+#write span.md-toc-item.md-toc-h5>a:before {
+    counter-increment: h5toc;
+    content: var(--autonum-h5toc)
+}
+
+#write h6>span:first-of-type::before {
+    counter-increment: h6;
+    content: var(--autonum-h6);
+    color: var(--element-color)
+}
+
+#outline-content li.outline-h6>div>span.outline-label:before {
+    counter-increment: h6;
+    content: var(--autonum-h6)
+}
+
+.outline-content .outline-h6>.outline-item>.outline-label:before {
+    counter-increment: h6;
+    content: var(--autonum-h6)
+}
+
+#write span.md-toc-item.md-toc-h6>a:before {
+    counter-increment: h6toc;
+    content: var(--autonum-h6toc)
+}
+
+::marker {
+    color: var(--element-color-deep)
+}
+
+li.md-list-item {
+    margin: .4rem 0
+}
+
+#write ol,
+#write ul {
+    margin-top: 0;
+    margin-left: 16px;
+    margin-bottom: 8px;
+    padding-left: 13px
+}
+
+#write em {
+    padding: 0 3px 0 0
+}
+
+#write ul {
+    list-style-type: disc
+}
+
+#write ul ul {
+    list-style-type: circle
+}
+
+#write ul ul ul {
+    list-style-type: square
+}
+
+#write ol {
+    list-style-type: decimal
+}
+
+#write ol ol {
+    list-style-type: lower-alpha
+}
+
+#write ol ol ol {
+    list-style-type: lower-roman
+}
+
+#write li section {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 1.7rem;
+    text-align: justify;
+    color: #000;
+    font-weight: 500
+}
+
+#write li:before {
+    content: "";
+    height: calc(100% - 45px);
+    top: 35px;
+    position: absolute;
+    border-left: .5px solid var(--element-color);
+    left: -12.5px
+}
+
+#write .task-list-item input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.3rem;
+    height: 1.3rem;
+    position: absolute;
+    top: 3px;
+    left: -22px;
+    outline: 0;
+    cursor: pointer;
+    z-index: 1
+}
+
+#write .task-list-item input::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -2px;
+    left: 18px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid var(--element-color-deep, #ffa531);
+    background: #fff;
+    transition: all .4s cubic-bezier(.5, 1.6, .4, .7);
+    box-sizing: border-box
+}
+
+#write .task-list-item input::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 138%;
+    width: .35rem;
+    height: .65rem;
+    border: solid #fff;
+    border-width: 0 2.5px 2.5px 0;
+    transform: translate(-50%, -60%) rotate(45deg) scale(1);
+    transition: all .3s cubic-bezier(.5, 1.6, .4, .7);
+    opacity: 0
+}
+
+#write .task-list-item input:checked::before {
+    background: var(--element-color, #ffc000);
+    border-color: var(--element-color, #ffc000);
+    transform: scale(1.05);
+    animation: task-pulse .4s forwards
+}
+
+@keyframes task-pulse {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.15)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+#write .task-list-item input:checked::after {
+    opacity: 1;
+    transform: translate(-50%, -60%) rotate(45deg) scale(1)
+}
+
+#write .task-list-item input[type=checkbox]+p,
+#write .task-list-item input[type=checkbox]+span {
+    position: relative;
+    display: inline;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    transition: color .4s ease;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 50%;
+    background-size: 0 1.5px;
+    background-repeat: no-repeat;
+    transition: background-size .4s cubic-bezier(.25, .8, .25, 1), color .4s ease
+}
+
+#write .task-list-item input[type=checkbox]:checked+p,
+#write .task-list-item input[type=checkbox]:checked+span {
+    color: #bbb;
+    background-size: 100% 1.5px
+}
+
+#write .task-list-item input[type=checkbox]:checked+p>em,
+#write .task-list-item input[type=checkbox]:checked+p>span,
+#write .task-list-item input[type=checkbox]:checked+p>strong {
+    color: inherit
+}
+
+#write blockquote {
+    position: relative;
+    margin: 20px 0;
+    padding: 18px 20px 18px 48px;
+    background-color: var(--element-color-soo-shallow);
+    border: none;
+    border-radius: 16px;
+    color: #555;
+    line-height: 1.6;
+    transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), background-color .3s ease
+}
+
+#write blockquote::before {
+    content: "✨";
+    position: absolute;
+    left: 16px;
+    top: 18px;
+    font-size: 20px;
+    line-height: 1;
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif
+}
+
+#write blockquote p {
+    color: #555;
+    margin-bottom: .5em
+}
+
+#write blockquote p:last-child {
+    margin-bottom: 0
+}
+
+#write blockquote:hover {
+    transform: scale(1.02)
+}
+
+#write a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 2px 4px;
+    margin: 0 -2px;
+    border-radius: 4px;
+    background: 0 0;
+    border-bottom: none;
+    transition: all .2s ease
+}
+
+#write p a:not(.md-toc-inner)::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 2px;
+    vertical-align: -.15em;
+    background-color: var(--element-color);
+    -webkit-mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath d='M477.934459 330.486594A50.844091 50.844091 0 0 1 406.752731 258.796425L512 152.532274a254.220457 254.220457 0 0 1 359.467726 359.467726L762.66137 618.772592a50.844091 50.844091 0 1 1-71.690168-71.690169l106.772591-106.772592a152.532274 152.532274 0 0 0-215.578947-215.578947z m70.164846 361.501489A50.844091 50.844091 0 1 1 619.789474 762.66137l-107.281033 107.281033A254.220457 254.220457 0 0 1 152.532274 512L259.813307 406.752731a50.844091 50.844091 0 1 1 72.19861 69.656405l-107.789474 107.281033a152.532274 152.532274 0 0 0 215.578947 215.578947z m-126.601788-16.77855a50.844091 50.844091 0 1 1-71.690168-71.690169l251.678252-251.678252a50.844091 50.844091 0 0 1 71.690169 71.690169z'/%3E%3C/svg%3E") no-repeat center/contain;
+    mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath d='M477.934459 330.486594A50.844091 50.844091 0 0 1 406.752731 258.796425L512 152.532274a254.220457 254.220457 0 0 1 359.467726 359.467726L762.66137 618.772592a50.844091 50.844091 0 1 1-71.690168-71.690169l106.772591-106.772592a152.532274 152.532274 0 0 0-215.578947-215.578947z m70.164846 361.501489A50.844091 50.844091 0 1 1 619.789474 762.66137l-107.281033 107.281033A254.220457 254.220457 0 0 1 152.532274 512L259.813307 406.752731a50.844091 50.844091 0 1 1 72.19861 69.656405l-107.789474 107.281033a152.532274 152.532274 0 0 0 215.578947 215.578947z m-126.601788-16.77855a50.844091 50.844091 0 1 1-71.690168-71.690169l251.678252-251.678252a50.844091 50.844091 0 0 1 71.690169 71.690169z'/%3E%3C/svg%3E") no-repeat center/contain;
+    transition: transform .4s cubic-bezier(.25, .8, .25, 1)
+}
+
+#write a:not(.md-toc-inner):hover {
+    color: var(--element-color-deep);
+    background: var(--element-color-soo-shallow)
+}
+
+#write a:hover:not(.md-toc-inner)::before {
+    transform: rotate(180deg);
+    background-color: var(--element-color-deep)
+}
+
+#write a:visited {
+    color: var(--element-color-deep)
+}
+
+#write sup a::before {
+    content: none
+}
+
+#write mark {
+    background-color: transparent;
+    color: inherit;
+    padding: 0 2px;
+    margin: 0;
+    border-radius: 4px;
+    font-weight: inherit;
+    position: relative;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    background-image: linear-gradient(to top, var(--element-color-so-shallow), var(--element-color-so-shallow));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 40%;
+    transition: background-size .3s cubic-bezier(.34, 1.56, .64, 1), color .3s ease, border-radius .3s ease
+}
+
+#write mark::after,
+#write mark::before {
+    content: none !important;
+    display: none !important
+}
+
+#write mark:hover {
+    background-size: 100% 100%;
+    border-radius: 6px
+}
+
+#write mark strong {
+    color: var(--element-color-deep)
+}
+
+#write mark:hover strong {
+    color: var(--element-color-deep);
+    text-shadow: none
+}
+
+#write strong {
+    color: var(--element-color);
+    font-weight: 700;
+    display: inline;
+    position: relative;
+    border-bottom: 2px solid transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    transition: border-color .3s ease, color .3s ease, text-shadow .3s ease
+}
+
+#write strong:hover {
+    color: var(--element-color);
+    border-bottom-color: var(--element-color-shallow);
+    text-shadow: 0 2px 8px var(--element-color-so-shallow)
+}
+
+#write mark:hover strong {
+    color: #fff;
+    text-shadow: none;
+    transform: translateY(-2px) scale(1.1)
+}
+
+@keyframes stitchFlow {
+    from {
+        background-position-x: 0
+    }
+
+    to {
+        background-position-x: 6px
+    }
+}
+
+#write em {
+    font-style: italic;
+    color: #555;
+    text-decoration: none !important;
+    padding: 0 2px 1px;
+    background-repeat: repeat-x;
+    background-position: 0 100%;
+    background-size: 6px 3px;
+    background-image: linear-gradient(-45deg, transparent 35%, var(--element-color-shallow) 35%, var(--element-color-shallow) 65%, transparent 65%);
+    transition: color .2s ease, -webkit-text-stroke .2s ease, background-image .2s ease;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    position: relative;
+    z-index: 0
+}
+
+#write em::after {
+    content: none !important;
+    display: none !important
+}
+
+#write em:hover {
+    color: var(--element-color);
+    font-weight: 400;
+    -webkit-text-stroke: .5px var(--element-color);
+    background-image: linear-gradient(-45deg, transparent 35%, var(--element-color) 35%, var(--element-color) 65%, transparent 65%);
+    animation: stitchFlow .5s linear infinite
+}
+
+#write del {
+    text-decoration: line-through;
+    text-decoration-color: var(--element-color);
+    color: #999;
+    transition: all .3s ease
+}
+
+#write del:hover {
+    opacity: .6;
+    text-decoration-color: var(--element-color-deep);
+    cursor: not-allowed
+}
+
+#write hr {
+    border: none;
+    border-top: 3px dashed var(--element-color-shallow);
+    margin: 30px 0;
+    opacity: .6;
+    transform: scaleX(.8);
+    transition: all .4s ease
+}
+
+#write hr:hover {
+    transform: scaleX(1);
+    border-color: var(--element-color);
+    opacity: 1
+}
+
+#write p:has(img) {
+    text-align: center
+}
+
+#write img {
+    border-radius: 12px;
+    display: inline-block;
+    margin: 15px 5px;
+    object-fit: contain;
+    filter: brightness(1) contrast(1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .05);
+    transition: all .4s cubic-bezier(.34, 1.56, .64, 1);
+    max-width: 100%;
+    cursor: zoom-in
+}
+
+#write p>img:only-child {
+    display: block;
+    margin: 20px auto
+}
+
+#write img:hover {
+    filter: brightness(1.05) contrast(1.05);
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px -4px var(--element-color-soo-shallow);
+    z-index: 10
+}
+
+#write figcaption {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #888;
+    text-align: center;
+    line-height: 1.5;
+    transition: color .3s ease
+}
+
+#write figure:hover>figcaption,
+#write p:hover>img+figcaption {
+    color: var(--element-color-deep)
+}
+
+pre.md-meta-block {
+    padding: 30px 20px 20px;
+    margin: 20px 0;
+    font-family: var(--monospace);
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    background-color: var(--element-color-soo-shallow);
+    border: 1.5px dashed var(--element-color);
+    border-radius: 8px;
+    position: relative;
+    transition: all .3s ease
+}
+
+pre.md-meta-block::after {
+    content: "YAML";
+    position: absolute;
+    top: 0;
+    right: 20px;
+    background-color: var(--element-color);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+    pointer-events: none
+}
+
+pre.md-meta-block:hover {
+    background-color: #fff;
+    border-style: solid;
+    border-color: var(--element-color-deep);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .05);
+    transform: translateY(-2px)
+}
+
+#write code:not(.md-fencescode) {
+    font-family: CascadiaCode, "Lucida Console", Consolas, Courier, monospace;
+    font-size: .9em;
+    letter-spacing: .5px;
+    color: var(--element-color-linecode);
+    background-color: var(--element-color-linecode-background);
+    padding: 5px 5px;
+    margin: 0 2px;
+    border-radius: 6px;
+    vertical-align: middle;
+    transition: all .2s cubic-bezier(.34, 1.56, .64, 1)
+}
+
+#write code:not(.md-fencescode):hover {
+    background-color: var(--element-color);
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px var(--element-color-so-shallow);
+    text-decoration: none
+}
+
+.md-diagram {
+    background: 0 0 !important;
+    margin: 20px 0
+}
+
+.node circle,
+.node ellipse,
+.node path,
+.node rect {
+    fill: var(--element-color-so-shallow) !important;
+    stroke: var(--primary-color) !important;
+    stroke-width: 1.5px !important;
+    transition: all .3s ease
+}
+
+.node polygon {
+    fill: color-mix(in srgb, var(--element-color-shallow), transparent 50%) !important;
+    stroke: var(--element-color-deep) !important;
+    stroke-width: 1.5px !important
+}
+
+.edgePath .path,
+.flowchart-link {
+    stroke: var(--element-color-deep) !important;
+    stroke-width: 1.5px !important;
+    opacity: .8 !important
+}
+
+.marker path,
+marker path {
+    fill: var(--element-color-deep) !important;
+    stroke: var(--element-color-deep) !important
+}
+
+.cluster-label text,
+.edgeLabel,
+.labelBkg,
+.node .label {
+    color: var(--appui-color-text) !important;
+    fill: var(--appui-color-text) !important;
+    font-weight: 500 !important;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff !important;
+    background-color: transparent
+}
+
+.edgeLabel .label,
+.edgeLabel div {
+    background-color: #fff !important;
+    border-radius: 4px
+}
+
+.edgeLabel p,
+.edgeLabel span {
+    background-color: transparent !important;
+    color: var(--appui-color-text) !important
+}
+
+.edgeLabel rect {
+    fill: #fff !important;
+    opacity: 1 !important;
+    stroke: none !important
+}
+
+.labelBkg {
+    fill: #fff !important;
+    background-color: #fff !important;
+    opacity: 1 !important
+}
+
+.cluster rect {
+    fill: color-mix(in srgb, var(--element-color-soo-shallow), transparent 50%) !important;
+    stroke: var(--element-color-shallow) !important;
+    stroke-dasharray: 4px !important
+}
+
+.cluster span,
+.cluster-label text {
+    fill: var(--element-color-deep) !important;
+    color: var(--element-color-deep) !important;
+    background: 0 0 !important;
+    font-weight: 700 !important
+}
+
+.md-fences:not([lang=mermaid])::before {
+    content: attr(lang);
+    font-family: CascadiaCode, "Lucida Console", Consolas, Courier, monospace;
+    text-align: right;
+    padding-right: 15px;
+    color: #7e7e7e;
+    display: block;
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNDUwcHgiIGhlaWdodD0iMTMwcHgiPgogIDxlbGxpcHNlIGN4PSI2NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgc3Ryb2tlPSJyZ2IoMjIwLDYwLDU0KSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJyZ2IoMjM3LDEwOCw5NikiLz4KICA8ZWxsaXBzZSBjeD0iMjI1IiBjeT0iNjUiIHJ4PSI1MCIgcnk9IjUyIiAgc3Ryb2tlPSJyZ2IoMjE4LDE1MSwzMykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDI0NywxOTMsODEpIi8+CiAgPGVsbGlwc2UgY3g9IjM4NSIgY3k9IjY1IiByeD0iNTAiIHJ5PSI1MiIgIHN0cm9rZT0icmdiKDI3LDE2MSwzNykiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0icmdiKDEwMCwyMDAsODYpIi8+Cjwvc3ZnPg==);
+    height: 32px;
+    width: 100%;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-color: #f8f8f8;
+    border-radius: 5px 5px 0 0;
+    background-position: 6px 11px;
+    margin-bottom: 0
+}
+
+.CodeMirror-wrap .CodeMirror-scroll {
+    overflow-x: auto
+}
+
+.md-fences {
+    position: relative;
+    z-index: 1;
+    overflow: visible
+}
+
+.md-fences.md-focus {
+    z-index: 100
+}
+
+.md-fences .cm-s-inner.CodeMirror {
+    margin-top: 0
+}
+
+.cm-s-inner.CodeMirror {
+    padding: 20px 12px 12px 20px;
+    color: #4f5467;
+    font-family: CascadiaCode, "Lucida Console", Consolas, Courier, monospace;
+    border-radius: 10px;
+    background-color: #fa0303;
+    line-height: 1.6rem
+}
+
+.CodeMirror-gutters {
+    border-right: 1px solid #9d9d9d52;
+    background: inherit;
+    white-space: nowrap
+}
+
+pre.CodeMirror-line {
+    padding: 0 1.2rem
+}
+
+.CodeMirror-linenumber {
+    padding: 0 3px 0 5px;
+    text-align: right;
+    color: #a3a3a3
+}
+
+.cm-s-inner.CodeMirror {
+    background: #f8f8f8;
+    border-radius: 0 0 5px 5px;
+    padding: 5px 12px 12px 12px;
+    page-break-before: auto;
+    line-height: 1.8rem
+}
+
+.md-rawblock .md-rawblock-tooltip {
+    inset: auto .3rem auto auto;
+    transform: translateY(-120%)
+}
+
+.cm-keyword {
+    color: #a626a4 !important;
+    font-weight: 700 !important
+}
+
+.cm-variable {
+    color: #b92121 !important
+}
+
+.cm-tag {
+    color: var(--color-cm-keyword) !important;
+    font-weight: 700 !important
+}
+
+.cm-variable-2,
+.cm-variable-3 {
+    color: #7aadad !important;
+    font-weight: 700 !important
+}
+
+.cm-def {
+    color: #c18401 !important
+}
+
+.cm-attribute {
+    color: #8f6aa8 !important
+}
+
+.cm-comment,
+.md-comment,
+.md-meta {
+    color: #9a9a9a !important
+}
+
+.cm-string {
+    color: #50a14f !important;
+    font-variant-ligatures: common-ligatures !important
+}
+
+.cm-link {
+    color: #e46918 !important
+}
+
+.cm-type {
+    color: #626161
+}
+
+.cm-property {
+    color: #800a84 !important
+}
+
+.cm-tag:not(.cm-bracket) {
+    font-weight: 700 !important
+}
+
+.cm-operator {
+    color: #0abe00 !important
+}
+
+.cm-number {
+    color: #1694b6 !important
+}
+
+.cm-meta {
+    color: #4078f2 !important;
+    font-weight: 700 !important
+}
+
+.cm-builtin {
+    color: #fa6060 !important
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #a626a4 !important;
+    font-weight: 700
+}
+
+kbd {
+    display: inline-block;
+    min-width: 1.6em;
+    text-align: center;
+    padding: 3px 6px;
+    margin: 0 4px;
+    font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: .9em;
+    line-height: 1.4;
+    font-weight: 600;
+    border-radius: 4px;
+    background-color: #fff;
+    color: var(--element-color-deep);
+    border: 1px solid var(--element-color);
+    border-bottom-width: 3px;
+    box-shadow: 0 2px 0 var(--element-color-so-shallow);
+    transition: all .15s cubic-bezier(.25, .8, .25, 1);
+    transform: translateY(0)
+}
+
+kbd:hover {
+    border-bottom-width: 1px;
+    transform: translateY(2px);
+    background-color: var(--element-color-soo-shallow);
+    box-shadow: 0 0 0 transparent;
+    color: var(--element-color-deep)
+}
+
+#write table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    margin: 20px 0;
+    border: 1px solid var(--element-color-shallow);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.6
+}
+
+#write table td,
+#write table th {
+    padding: 8px 12px;
+    color: #333;
+    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all .2s ease
+}
+
+#write table td:last-child,
+#write table th:last-child {
+    border-right: none
+}
+
+#write table tr:last-child td {
+    border-bottom: none
+}
+
+#write table th {
+    background-color: var(--element-color-soo-shallow);
+    color: var(--element-color-deep);
+    font-weight: 700;
+    white-space: nowrap
+}
+
+#write table tbody tr:hover td {
+    background-color: var(--element-color-soo-shallow)
+}
+
+#write table tbody td:hover {
+    background-color: var(--element-color-soo-shallow);
+    color: var(--element-color-deep);
+    box-shadow: inset 0 0 0 1px var(--element-color-shallow);
+    cursor: default
+}
+
+#write .footnote-word {
+    font-weight: 400;
+    color: #595959
+}
+
+#write .footnote-ref {
+    font-weight: 400;
+    color: #595959
+}
+
+#write .footnote-item em {
+    font-size: 14px;
+    color: #595959;
+    display: block;
+    background: 0 0
+}
+
+#write sup.md-footnote {
+    font-size: 9px;
+    padding: 1px 5px;
+    top: -11px;
+    left: 3px;
+    background-color: rgba(238, 238, 238, .7);
+    color: #555;
+    border-radius: 50%;
+    cursor: pointer
+}
+
+.md-alert {
+    padding: 5px 10px;
+    margin-bottom: 16px;
+    color: #555;
+    border: none !important;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), box-shadow .3s ease, background-color .3s ease
+}
+
+.md-alert:hover {
+    transform: scale(1.01) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
+    z-index: 1
+}
+
+.md-alert-text-container {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, .7);
+    backdrop-filter: blur(2px);
+    padding: 2px 10px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .03);
+    position: relative;
+    z-index: 2
+}
+
+.md-alert-text-container::after {
+    margin-right: 0
+}
+
+.md-alert::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    bottom: -12px;
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+    font-size: 64px;
+    line-height: 1;
+    opacity: .12;
+    transform: rotate(-15deg);
+    pointer-events: none;
+    z-index: 0;
+    transition: all .4s cubic-bezier(.34, 1.56, .64, 1)
+}
+
+.md-alert:hover::after {
+    transform: rotate(0) scale(1.1);
+    opacity: .2;
+    right: 0;
+    bottom: -4px
+}
+
+.md-alert-text svg {
+    fill: currentColor;
+    position: relative;
+    top: 1px;
+    margin-right: 5px;
+    width: 1em;
+    height: 1em
+}
+
+.md-alert.md-alert-note {
+    background-color: rgba(108, 92, 231, .1)
+}
+
+.md-alert-text-note {
+    color: #6c5ce7
+}
+
+.md-alert.md-alert-note:hover {
+    background-color: rgba(108, 92, 231, .15)
+}
+
+.md-alert.md-alert-note::after {
+    content: "📝"
+}
+
+.md-alert.md-alert-tip {
+    background-color: rgba(0, 184, 148, .1)
+}
+
+.md-alert-text-tip {
+    color: #00b894
+}
+
+.md-alert.md-alert-tip:hover {
+    background-color: rgba(0, 184, 148, .15)
+}
+
+.md-alert.md-alert-tip::after {
+    content: "💡"
+}
+
+.md-alert.md-alert-warning {
+    background-color: rgba(253, 203, 110, .15)
+}
+
+.md-alert-text-warning {
+    color: #e17055
+}
+
+.md-alert.md-alert-warning:hover {
+    background-color: rgba(253, 203, 110, .2)
+}
+
+.md-alert.md-alert-warning::after {
+    content: "⚠️"
+}
+
+.md-alert.md-alert-important {
+    background-color: rgba(255, 118, 117, .12)
+}
+
+.md-alert-text-important {
+    color: #ff7675
+}
+
+.md-alert.md-alert-important:hover {
+    background-color: rgba(255, 118, 117, .18)
+}
+
+.md-alert.md-alert-important::after {
+    content: "📌"
+}
+
+.md-alert.md-alert-caution {
+    background-color: rgba(214, 48, 49, .08)
+}
+
+.md-alert-text-caution {
+    color: #d63031
+}
+
+.md-alert.md-alert-caution:hover {
+    background-color: rgba(214, 48, 49, .12)
+}
+
+.md-alert.md-alert-caution::after {
+    content: "🔥"
+}
+
+.md-toc {
+    margin: 20px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, .4);
+    background-image: radial-gradient(circle at -22% -42%, var(--element-color-so-shallow), transparent 42%), radial-gradient(circle at 100% 170%, var(--element-color-shallow), transparent 42%);
+    background-repeat: no-repeat;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, .6);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .05);
+    border-radius: 16px;
+    font-size: 15px;
+    color: #555;
+    position: relative;
+    overflow: hidden;
+    transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), box-shadow .3s ease
+}
+
+.md-toc:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .1)
+}
+
+.md-toc:before {
+    content: "目录";
+    display: block;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--element-color-deep);
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    border-bottom: 1px dashed rgba(0, 0, 0, .08);
+    padding-bottom: 15px
+}
+
+.md-toc-item {
+    display: block;
+    line-height: 1.8em;
+    color: #666;
+    text-decoration: none;
+    padding: 6px 15px;
+    border-radius: 50px;
+    margin-bottom: 4px;
+    position: relative;
+    transition: all .2s cubic-bezier(.25, .8, .25, 1)
+}
+
+.md-toc-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%
+}
+
+.md-toc-h1 {
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, .4)
+}
+
+.md-toc-h2 {
+    margin-left: 1em;
+    font-size: .95rem
+}
+
+.md-toc-h3 {
+    margin-left: 2em;
+    font-size: .9rem;
+    color: #777
+}
+
+.md-toc-h4 {
+    margin-left: 3em;
+    font-size: .85em;
+    opacity: .8
+}
+
+.md-toc-h5 {
+    margin-left: 4em;
+    font-size: .85em;
+    opacity: .7
+}
+
+.md-toc-h6 {
+    margin-left: 5em;
+    font-size: .85em;
+    opacity: .6
+}
+
+.md-toc-item:hover {
+    background-color: rgba(255, 255, 255, .95);
+    color: var(--element-color-deep);
+    padding-left: 20px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .05)
+}
+
+.md-tooltip-hide>span {
+    display: none
+}
+
+#typora-sidebar {
+    height: 100%;
+    color: var(--text-color);
+    font-size: .92rem;
+    background-color: var(--bg-color)
+}
+
+#outline-content::-webkit-scrollbar {
+    width: 5px
+}
+
+#file-library::-webkit-scrollbar {
+    width: 5px
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: var(--element-color)
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--element-color-shallow)
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 8px
+}
+
+.active-tab-files #info-panel-tab-file .info-panel-tab-border,
+.active-tab-outline #info-panel-tab-outline .info-panel-tab-border,
+.ty-show-search #info-panel-tab-search .info-panel-tab-border {
+    border-radius: 10px;
+    height: 4px;
+    background-color: var(--appui-color)
+}
+
+.file-node-content {
+    line-height: 1.2rem
+}
+
+.file-tree-node.active>.file-node-content {
+    color: var(--appui-color)
+}
+
+span.file-node-title {
+    color: var(--appui-color-text)
+}
+
+.file-node-icon {
+    color: var(--appui-color-icon);
+    padding-right: .2rem
+}
+
+.file-tree-node.active>.file-node-background {
+    font-weight: bolder;
+    border-left: 4px solid var(--appui-color);
+    border-color: var(--appui-color)
+}
+
+.info-panel-tab-title {
+    font-weight: bolder;
+    color: var(--appui-color-text)
+}
+
+#file-library-search-panel {
+    background-color: #fff
+}
+
+#file-library-search-input {
+    border-radius: 3px;
+    border-color: var(--appui-color)
+}
+
+#file-library-search-input:focus {
+    border-width: 2px
+}
+
+#outline-content .outline-h2::after,
+#outline-content .outline-h2>.outline-item::before {
+    content: none !important;
+    display: none !important;
+    border: none !important;
+    background: 0 0 !important
+}
+
+#outline-content .outline-label {
+    border: none !important;
+    background: 0 0 !important;
+    padding-left: 0 !important;
+    margin: 0 !important
+}
+
+#outline-content .outline-item {
+    display: flex !important;
+    align-items: center !important;
+    width: fit-content;
+    max-width: 100%;
+    padding: 6px 12px;
+    margin-bottom: 2px;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
+    outline: 0;
+    transition: background-color .2s ease, color .2s ease, padding-right .2s ease, box-shadow .2s ease;
+    position: relative;
+    line-height: 1.6
+}
+
+#outline-content .outline-expander {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4px;
+    color: inherit
+}
+
+#outline-content .outline-label {
+    flex: 1;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+#outline-content .outline-h1 {
+    margin-top: 10px;
+    margin-bottom: 4px
+}
+
+#outline-content .outline-h2,
+#outline-content .outline-h3,
+#outline-content .outline-h4,
+#outline-content .outline-h5,
+#outline-content .outline-h6 {
+    border-left: 1.5px solid rgba(0, 0, 0, .06);
+    margin-left: 22px;
+    padding-left: 8px
+}
+
+#outline-content .outline-h1>.outline-item {
+    font-size: larger;
+    font-weight: 700;
+    color: var(--element-color-deep)
+}
+
+#outline-content .outline-item:hover {
+    background-color: var(--element-color-soo-shallow);
+    color: var(--element-color-deep);
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-left: none !important;
+    border-right: none !important
+}
+
+div.outline-item-active {
+    background-color: var(--element-color) !important;
+    color: #fff !important;
+    font-weight: 600;
+    box-shadow: 0 4px 10px var(--element-color-so-shallow);
+    transform: none;
+    padding-right: 30px !important;
+    padding-left: 12px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border: none !important
+}
+
+#outline-content .outline-item-active::after {
+    content: "✦";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    color: rgba(255, 255, 255, .9);
+    display: block !important;
+    z-index: 10;
+    animation: outline-twinkle 1.5s infinite alternate
+}
+
+@keyframes outline-twinkle {
+    from {
+        opacity: .7;
+        transform: translateY(-50%) scale(.9)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-50%) scale(1.1)
+    }
+}
+
+.typora-export-content .outline-content::before {
+    content: "目录";
+    font-size: 20px;
+    font-weight: 700;
+    position: absolute;
+    top: 22px;
+    left: 15px;
+    z-index: -1
+}
+
+.typora-export-sidebar .outline-content {
+    padding-top: 60px !important;
+    padding-left: 10px !important;
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 30px;
+    box-sizing: border-box
+}
+
+.typora-export-sidebar .outline-content::before {
+    content: "目录";
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--element-color-deep);
+    position: absolute;
+    top: 20px;
+    left: 24px;
+    z-index: 10;
+    letter-spacing: 2px
+}
+
+.typora-export-sidebar .outline-h1 {
+    margin-top: 10px !important;
+    margin-bottom: 4px !important;
+    margin-left: 0 !important
+}
+
+.typora-export-sidebar .outline-h1>.outline-item {
+    font-size: 1.1em !important;
+    font-weight: 700 !important;
+    color: var(--element-color-deep) !important
+}
+
+.typora-export-sidebar .outline-h2,
+.typora-export-sidebar .outline-h3,
+.typora-export-sidebar .outline-h4,
+.typora-export-sidebar .outline-h5,
+.typora-export-sidebar .outline-h6 {
+    border-left: 1.5px solid rgba(0, 0, 0, .06) !important;
+    margin-left: 15px !important;
+    padding-left: 8px !important;
+    list-style: none !important
+}
+
+.typora-export-sidebar .outline-item {
+    display: flex !important;
+    align-items: center !important;
+    width: fit-content !important;
+    max-width: 95% !important;
+    padding: 6px 12px !important;
+    margin: 2px 0 !important;
+    color: inherit !important;
+    cursor: pointer;
+    text-decoration: none !important;
+    border-radius: 50px !important;
+    border: none !important;
+    transition: all .2s ease;
+    line-height: 1.6;
+    overflow: visible !important
+}
+
+.typora-export-sidebar .outline-label {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    flex: 0 1 auto !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.typora-export-sidebar .outline-expander {
+    width: 16px !important;
+    text-align: center;
+    margin-right: 4px;
+    flex-shrink: 0
+}
+
+.typora-export .outline-expander::before {
+    content: "▸" !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 14px !important;
+    color: #999;
+    top: 0 !important;
+    display: inline-block;
+    transition: transform .2s
+}
+
+.typora-export .outline-expander:hover::before,
+.typora-export .outline-item-open>.outline-item>.outline-expander::before {
+    content: "▾" !important;
+    color: var(--element-color-deep)
+}
+
+.typora-export .outline-item-single .outline-expander::before {
+    display: none !important
+}
+
+.typora-export-sidebar .outline-item:hover {
+    background-color: var(--element-color-soo-shallow) !important;
+    color: var(--element-color-deep) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border: none !important
+}
+
+.typora-export-sidebar .outline-item-wrapper.outline-item-active>.outline-item {
+    background-color: var(--element-color) !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 10px var(--element-color-so-shallow);
+    padding-right: 12px !important;
+    padding-left: 12px !important;
+    margin-left: 0 !important;
+    border: none !important
+}
+
+.typora-export-sidebar .outline-item-wrapper.outline-item-active>.outline-item .outline-label {
+    color: #fff !important
+}
+
+.typora-export-sidebar .outline-item-wrapper.outline-item-active>.outline-item .outline-expander::before {
+    color: rgba(255, 255, 255, .8) !important
+}
+
+.typora-export-sidebar .outline-item-wrapper.outline-item-active>.outline-item::after {
+    content: "✦";
+    position: static !important;
+    transform: none !important;
+    margin-left: 8px !important;
+    flex-shrink: 0;
+    display: inline-block !important;
+    line-height: 1;
+    font-size: 10px;
+    font-family: Arial, sans-serif;
+    color: rgba(255, 255, 255, .9);
+    z-index: 10;
+    animation: outline-twinkle 1.5s infinite alternate
+}
+
+@media screen {
+    body.typora-export {
+        background-color: transparent
+    }
+}
+
+.typora-export-sidebar {
+    position: fixed;
+    margin-top: 0 !important;
+    top: 10px;
+    bottom: 10px;
+    left: 20px;
+    width: 320px;
+    background-color: var(--glass-bg-color);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, .6);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, .13);
+    z-index: 100;
+    overflow: hidden;
+    color: #555
+}
+
+.typora-export-sidebar .outline-content {
+    padding-top: 60px !important;
+    padding-left: 15px !important;
+    padding-right: 5px !important;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none
+}
+
+.typora-export #write {
+    margin: 20px auto;
+    max-width: 950px;
+    width: 90%;
+    min-height: calc(100vh - 40px);
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+    padding: 60px 80px
+}
+
+.typora-export-sidebar+#write {
+    margin-left: 350px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: auto;
+    max-width: none;
+    min-height: calc(100vh - 20px)
+}
+
+@media screen and (max-width:1200px) {
+    .typora-export-sidebar {
+        display: none
+    }
+
+    .typora-export #write,
+    .typora-export-sidebar+#write {
+        margin: 0;
+        border-radius: 0;
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+        padding: 20px;
+        min-height: 100vh
+    }
+}
+
+@media print {
+    @page {
+        margin: 10mm;
+        size: A4
+    }
+
+    body {
+        background-color: transparent !important
+    }
+
+    body {
+        margin: 0 !important;
+        width: 100% !important
+    }
+
+    .typora-export #write {
+        margin: 0 auto !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: 0 0 !important
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important
+    }
+
+    #write::before {
+        display: block !important;
+        opacity: .1 !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        -webkit-mask-image: var(--bg-style) !important;
+        mask-image: var(--bg-style) !important;
+        background-color: var(--element-color) !important;
+        pointer-events: none;
+        z-index: -1
+    }
+
+    p {
+        line-height: 1.5rem
+    }
+
+    figure,
+    pre {
+        page-break-inside: avoid
+    }
+
+    ol,
+    ul {
+        page-break-inside: auto !important;
+        break-inside: auto !important
+    }
+
+    li {
+        page-break-inside: avoid;
+        break-inside: avoid
+    }
+
+    pre {
+        page-break-inside: auto !important;
+        break-inside: auto !important;
+        white-space: pre-wrap
+    }
+
+    blockquote {
+        page-break-inside: auto !important;
+        break-inside: auto !important
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+        page-break-inside: avoid !important
+    }
+
+    p {
+        orphans: 2;
+        widows: 2
+    }
+
+    .md-toc {
+        background-image: none
+    }
+
+    #write li:before {
+        border-color: transparent
+    }
+}
+
+@media print {
+    .page-break {
+        page-break-after: always;
+        break-after: always;
+        height: 0;
+        display: block;
+        visibility: hidden
+    }
+}
+
+.dropdown-menu.context-menu {
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, .85) !important;
+    border: 1px solid rgba(255, 255, 255, .8) !important;
+    border-radius: 12px !important;
+    padding: 6px 0 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .04), 0 16px 40px rgba(0, 0, 0, .08) !important
+}
+
+.btn:focus {
+    outline-color: var(--element-color-shallow)
+}
+
+body .md-table-resize-popover {
+    width: max-content !important;
+    max-width: none !important;
+    height: auto !important;
+    padding: 12px !important;
+    background-color: var(--bg-color) !important;
+    border: none;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .12) !important
+}
+
+body .md-table-resize-popover .arrow {
+    display: none !important
+}
+
+body .md-table-resize-popover .md-grid-board-wrap {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 0 !important
+}
+
+body .md-table-resize-popover .md-grid-board {
+    width: auto !important;
+    border-collapse: separate !important;
+    border-spacing: 3px !important;
+    margin: 0 auto 10px auto !important
+}
+
+body .md-table-resize-popover .md-grid-board td {
+    padding: 0 !important;
+    background: 0 0 !important;
+    border: none !important
+}
+
+body .md-table-resize-popover .md-grid-board a {
+    display: block !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0 !important;
+    border-radius: 3px !important;
+    background-color: color-mix(in srgb, var(--text-color), transparent 90%) !important;
+    border: 1px solid transparent !important;
+    box-sizing: border-box !important;
+    transition: all .2s cubic-bezier(.34, 1.56, .64, 1) !important
+}
+
+body .md-table-resize-popover .md-grid-board td.md-grid-ext {
+    background: 0 0 !important
+}
+
+body .md-table-resize-popover .md-grid-board td.md-grid-ext a {
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 2px 4px color-mix(in srgb, var(--primary-color), transparent 60%) !important;
+    opacity: .9 !important
+}
+
+body .md-table-resize-popover .md-grid-board td.md-grid-ext a:hover {
+    opacity: 1 !important;
+    transform: scale(1.15) !important;
+    border-radius: 5px !important
+}
+
+body .md-table-resize-popover .popover-title {
+    background: 0 0 !important;
+    border: none !important;
+    border-top: 1px dashed color-mix(in srgb, var(--element-color), var(--text-color) 20%) !important;
+    padding: 10px 0 0 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    color: var(--element-color) !important;
+    font-size: 13px !important;
+    font-family: var(--monospace, monospace) !important;
+    font-weight: 400 !important
+}
+
+body .md-table-resize-popover input {
+    width: 36px !important;
+    height: 24px !important;
+    padding: 0 !important;
+    text-align: center !important;
+    border: 1px solid var(--element-color-so-shallow) !important;
+    border-radius: 4px !important;
+    background-color: transparent !important;
+    color: var(--text-color) !important;
+    font-family: var(--monospace, monospace) !important;
+    font-size: 14px !important;
+    outline: 0 !important;
+    transition: all .3s ease !important;
+    box-shadow: none !important
+}
+
+body .md-table-resize-popover input:focus {
+    border-color: var(--primary-color) !important;
+    background-color: color-mix(in srgb, var(--primary-color), transparent 95%) !important;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color), transparent 80%) !important
+}@import url();
+
+:root {
+  /* 标题后小图标，借鉴自思源笔记主题——Savor */
+  --h1-icon-shape: url("data:image/svg+xml;utf8,<svg fill='rgba(255, 176, 176, 0.5)' height='24' viewBox='0 0 32 32' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M4.8 29.714v0c-1.371 0-2.514-1.143-2.514-2.514v0c0-1.371 1.143-2.514 2.514-2.514v0c1.371 0 2.514 1.143 2.514 2.514v0c0.114 1.371-1.029 2.514-2.514 2.514z'/></svg>") no-repeat center;
+  --h2-icon-shape: url("data:image/svg+xml;utf8,<svg fill='rgba(255, 176, 176, 0.5)' height='24' viewBox='0 0 32 32' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>") no-repeat center;
+  --h3-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>");
+  --h4-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 22.857c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286z'/></svg>");
+  --h5-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 22.857c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286zM4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 11.429c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>");
+  --h6-icon-shape: url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 11.429c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 16c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286z'/></svg>");
+ 
+  /* 文档背景样式 */
+  /* 1. 交叉斜线 */
+  --bg-shape-cross: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h30v30H0z' fill='none'/%3E%3Cpath d='M0 0L15 15M30 0L15 15M0 30L15 15M30 30L15 15' stroke='black' stroke-width='0.4'/%3E%3C/svg%3E");
+  /* 2. 星点图案 */
+  --bg-shape-star: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M10 10l2-6l2 6l6 2l-6 2l-2 6l-2-6l-6-2Z' fill='black'/%3E%3Cpath d='M30 15l1-3l1 3l3 1l-3 1l-1 3l-1-3l-3-1Z' fill='black'/%3E%3Cpath d='M25 30l1.5-4.5l1.5 4.5l4.5 1.5l-4.5 1.5l-1.5 4.5l-1.5-4.5l-4.5-1.5Z' fill='black'/%3E%3C/svg%3E");
+  /* 3. 六边形图案 */
+  --bg-shape-hex: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M10 5l10 0l5 8.66l-5 8.66l-10 0l-5-8.66Z' fill='none' stroke='black' stroke-width='0.4'/%3E%3Cpath d='M20 22.32l10 0l5 8.66l-5 8.66l-10 0l-5-8.66Z' fill='none' stroke='black' stroke-width='0.4'/%3E%3C/svg%3E");
+  /* 4. 十字圆点 */
+  --bg-shape-dot: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='7.5' cy='7.5' r='0.5' fill='black'/%3E%3Ccircle cx='7.5' cy='2.5' r='0.5' fill='black'/%3E%3Ccircle cx='7.5' cy='12.5' r='0.5' fill='black'/%3E%3Ccircle cx='2.5' cy='7.5' r='0.5' fill='black'/%3E%3Ccircle cx='12.5' cy='7.5' r='0.5' fill='black'/%3E%3C/svg%3E");
+  /* 5. 三角形 */
+  --bg-shape-tri: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h30v30H0z' fill='none'/%3E%3Cpath d='M0 0L30 0L15 15Z' fill='black'/%3E%3Cpath d='M30 30L0 30L15 15Z' fill='black'/%3E%3C/svg%3E");
+  /* 6. 方格网 */
+  --bg-shape-grid: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0z' fill='none'/%3E%3Cpath d='M20 0v20M0 20h20' stroke='black' stroke-width='0.7'/%3E%3C/svg%3E");
+  /* 7. 无背景 (纯白背景) */
+  --bg-shape-none: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=");
+
+  /* 文档背景样式  none 无背景*/
+  --bg-style: var(--bg-shape-cross);
+
+
+  /* 自动编号格式设置 无需自动编号可全部注释掉或部分注释掉*/
+  --autonum-h1: counter(h1) ". ";
+  --autonum-h2: counter(h1) "." counter(h2) ". ";
+  --autonum-h3: counter(h1) "." counter(h2) "." counter(h3) ". ";
+  --autonum-h4: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) ". ";
+  --autonum-h5: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". ";
+  --autonum-h6: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". ";
+
+  /* 下面是文章内Toc目录自动编号，与上面一样即可 */
+  --autonum-h1toc: counter(h1toc) ". ";
+  --autonum-h2toc: counter(h1toc) "." counter(h2toc) ". ";
+  --autonum-h3toc: counter(h1toc) "." counter(h2toc) "." counter(h3toc) ". ";
+  --autonum-h4toc: counter(h1toc) "." counter(h2toc) "." counter(h3toc) "." counter(h4toc) ". ";
+  --autonum-h5toc: counter(h1toc) "." counter(h2toc) "." counter(h3toc) "." counter(h4toc) "." counter(h5toc) ". ";
+  --autonum-h6toc: counter(h1toc) "." counter(h2toc) "." counter(h3toc) "." counter(h4toc) "." counter(h5toc) "." counter(h6toc) ". ";
+
+
+  /* 文章区域的最大宽度，可以是多少px也可以是百分比 */
+  --max-width: 950px; 
+
+
+  /* 主题颜色 */
+
+  --head-title-color: #11aa63;
+  /* 标题主色 */
+  --head-title-h2-color: #FFF;
+  --head-title-h2-background: linear-gradient(to right, #43bd84, #68eaad, #43bd84);
+  /* 二级标题主色，因为二级标题是背景色的，所以单独设置 */
+
+  --element-color: #11aa63;
+  /* 元素主色 */
+  --element-color-deep: #009a52;
+  /* 元素深色 */
+  --element-color-shallow: #80c3a4;
+  /* 元素浅色 */
+  --element-color-so-shallow: #43bd8499;
+  /* 元素很浅色 */
+  --element-color-soo-shallow: #6cb19125;
+  /* 元素非常浅色 */
+
+  /* 毛玻璃底色 透明度一定要很低 */
+  --glass-bg-color:#6cb19112;
+
+  --element-color-linecode: #009a52;
+  /* 行内代码文字色 */
+  --element-color-linecode-background: #6cb19125;
+  /* 行内代码背景色 */
+
+  /* 程序主题色 */
+  --appui-color: #008145;
+  --appui-color-icon: #0e874f;
+  --appui-color-text: #333;
+  --primary-color: #008145;
+
+  --rawblock-edit-panel-bd:var(--element-color-soo-shallow);
+}
+</style>
+<style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
+<style type='text/css'  id="style-mac-print"> @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}</style>
+
+<title>軟體工程必備知識_中文版題目解答</title>
+</head>
+<body class='typora-export typora-export-show-outline typora-export-no-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#軟體工程必備知識中文版題目＋解答">軟體工程必備知識：中文版題目＋解答</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一軟體工程基礎fundamental-to-sem">一、軟體工程基礎（Fundamental to SEM）</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1-請列出七大工程原則engineering-principles中的至少五項">1. 請列出七大工程原則（Engineering Principles）中的至少五項。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2-軟體開發專案的四種本質特性是什麼">2. 軟體開發專案的四種本質／特性是什麼？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#3-如何定義一個高品質的應用軟體">3. 如何定義一個高品質的應用軟體？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#4-專案管理中的三重限制triple-constraint理論是什麼">4. 專案管理中的三重限制（triple constraint）理論是什麼？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#5-什麼是-scope-creep-與-ripple-effect">5. 什麼是 scope creep 與 ripple effect？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#6-請列出swebok中至少六個知識領域knowledge-areas-ka">6. 請列出《SWEBOK》中至少六個知識領域（Knowledge Areas, KA）。</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二軟體流程software-process">二、軟體流程（Software Process）</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#7-請列出三種通用的軟體開發流程模型">7. 請列出三種通用的軟體開發流程模型。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#8-所有軟體流程都共有的四個基本活動是什麼">8. 所有軟體流程都共有的四個基本活動是什麼？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#9-請列出流程描述process-description定義中常見的組成要素">9. 請列出流程描述（process description）定義中常見的組成要素。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#10-什麼是軟體工程中的-v-model">10. 什麼是軟體工程中的 V model？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#11-面對軟體變更不可避免的特性常用的兩種因應方式是什麼">11. 面對軟體變更不可避免的特性，常用的兩種因應方式是什麼？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#12-影響選擇-plan-based-或-agile-開發的主要因素有哪些">12. 影響選擇 plan-based 或 agile 開發的主要因素有哪些？</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三能力成熟度模型整合cmmi">三、能力成熟度模型整合（CMMI）</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#13-sei-的-cmmi-v13-三種模型是什麼">13. SEI 的 CMMI V1.3 三種模型是什麼？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#14-sei-的-cmmi-中-staged-representation-與-continuous-representation-的差別是什麼">14. SEI 的 CMMI 中 staged representation 與 continuous representation 的差別是什麼？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#15-請列出-cmmi-v22-的五個成熟度等級maturity-levels-ml">15. 請列出 CMMI V2.2 的五個成熟度等級（Maturity Levels, ML）。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#16-在-cmmi-中什麼是-managed-process">16. 在 CMMI 中，什麼是 Managed Process？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#17-在-cmmi-中什麼是-defined-process">17. 在 CMMI 中，什麼是 Defined Process？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#18-在-cmmi-中什麼是-quantitatively-managed-process">18. 在 CMMI 中，什麼是 Quantitatively Managed Process？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#19-在-cmmi-中process-institutionalization-的意義是什麼">19. 在 CMMI 中，Process Institutionalization 的意義是什麼？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#20-請列出-cmmi-dev-v22-中至少五個實務領域practice-areas-pa">20. 請列出 CMMI-DEV V2.2 中至少五個實務領域（Practice Areas, PA）。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#21-請概述-cmmi-dev-v22-中每個實務領域pa的組成要素">21. 請概述 CMMI-DEV V2.2 中每個實務領域（PA）的組成要素。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#22-請概述-cmmi-dev-v22-中每個-practice-的組成要素">22. 請概述 CMMI-DEV V2.2 中每個 practice 的組成要素。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#23-cmmi-dev-v22-定義了多少個-practice-group請簡述-practice-group-的意義">23. CMMI-DEV V2.2 定義了多少個 Practice Group？請簡述 Practice Group 的意義。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#24-請簡述你們小組負責報告的-pa-之名稱意圖與價值">24. 請簡述你們小組負責報告的 PA 之名稱、意圖與價值。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#25-請概述你們小組負責的-pa-中至少三項-practices">25. 請概述你們小組負責的 PA 中至少三項 practices。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#26-請寫出下列縮寫的全名與目的scampiidealpalpiid">26. 請寫出下列縮寫的全名與目的：SCAMPI、IDEAL、PAL、PIID。</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1-scampi">(1) SCAMPI</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2-ideal">(2) IDEAL</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#3-pal">(3) PAL</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#4-piid">(4) PIID</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#四敏捷軟體開發agile-software-development">四、敏捷軟體開發（Agile Software Development）</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#27-什麼是敏捷軟體開發宣言manifesto-for-agile-software-development">27. 什麼是敏捷軟體開發宣言（Manifesto for Agile Software Development）？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#28-請列出至少五項敏捷方法的原則">28. 請列出至少五項敏捷方法的原則。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#29-xpextreme-programming引入了哪些至少六項實務或技術">29. XP（Extreme Programming）引入了哪些至少六項實務或技術？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#30-為什麼-scrum-在軟體開發實務界被廣泛採用">30. 為什麼 Scrum 在軟體開發實務界被廣泛採用？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#31-哪些類型的系統特別適合採用敏捷開發">31. 哪些類型的系統特別適合採用敏捷開發？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#32-敏捷軟體開發的四個實務問題是什麼">32. 敏捷軟體開發的四個實務問題是什麼？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#33-當決定是否採用敏捷方法時應該問哪三個問題">33. 當決定是否採用敏捷方法時，應該問哪三個問題？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#34-請畫出-scrum-工作流程說明三種角色三種工件與三種儀式">34. 請畫出 Scrum 工作流程，說明三種角色、三種工件與三種儀式。</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一三種角色3-roles">（一）三種角色（3 Roles）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二三種工件3-artifacts">（二）三種工件（3 Artifacts）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三三種儀式3-ceremonies">（三）三種儀式（3 Ceremonies）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#四文字流程圖">（四）文字流程圖</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#35-請說明-agile-scrum-workflow-如何整合-kanban-的限制在製工作wip實務">35. 請說明 Agile Scrum workflow 如何整合 Kanban 的「限制在製工作（WIP）」實務。</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#36-為什麼-scrumban-在-app-開發中被廣泛採用">36. 為什麼 ScrumBan 在 APP 開發中被廣泛採用？</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#考前速記版超精簡">考前速記版（超精簡）</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1-三重限制">1. 三重限制</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2-四個共同流程活動">2. 四個共同流程活動</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#3-敏捷宣言四大價值">3. 敏捷宣言四大價值</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#4-scrum-三三三">4. Scrum 三三三</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#5-cmmi-五成熟度">5. CMMI 五成熟度</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#題目來源">題目來源</a></div><ul class="outline-children"></ul></li></div></div><div id='write'  class=''><h1 id='軟體工程必備知識中文版題目＋解答'><span>軟體工程必備知識：中文版題目＋解答</span></h1><blockquote><p><span>本整理依據老師提供之題目清單翻譯與作答，題目來源見原始 PDF：fileciteturn0file0L1-L40</span><br/><span>說明：原檔只有題目，沒有附標準答案，因此以下解答採用</span><strong><span>軟體工程常見教材版本</span></strong><span>與</span><strong><span>課堂複習常用答法</span></strong><span>整理。若老師上課有特別指定名詞或版本，請以老師課堂講法為準。</span></p></blockquote><hr /><h2 id='一軟體工程基礎fundamental-to-sem'><span>一、軟體工程基礎（Fundamental to SEM）</span></h2><h3 id='1-請列出七大工程原則engineering-principles中的至少五項'><span>1. 請列出七大工程原則（Engineering Principles）中的至少五項。</span></h3><p><strong><span>解答：</span></strong><span>常見可列舉如下：</span></p><ol start='' ><li><p><strong><span>嚴謹性與形式性（Rigor and Formality）</span></strong><span>：重視明確定義、可驗證流程與系統化方法。  </span></p></li><li><p><strong><span>關注分離（Separation of Concerns）</span></strong><span>：將複雜問題切分為較容易處理的部分。  </span></p></li><li><p><strong><span>模組化（Modularity）</span></strong><span>：把系統拆成獨立、可維護、可替換的模組。  </span></p></li><li><p><strong><span>抽象化（Abstraction）</span></strong><span>：抓住重要特性，隱藏不必要細節。  </span></p></li><li><p><strong><span>預期變更（Anticipation of Change）</span></strong><span>：因為需求與環境會變，設計時要保留彈性。  </span></p></li><li><p><strong><span>一般化（Generality）</span></strong><span>：讓解法可重複使用，不只適用單一情境。  </span></p></li><li><p><strong><span>漸進改善（Incrementality）</span></strong><span>：以逐步演進方式開發、修正與擴充系統。  </span></p></li></ol><hr /><h3 id='2-軟體開發專案的四種本質特性是什麼'><span>2. 軟體開發專案的四種本質／特性是什麼？</span></h3><p><strong><span>解答：</span></strong><span>常見的四項本質可寫為：</span></p><ol start='' ><li><p><strong><span>不可見性（Invisibility）</span></strong><span>：軟體不像硬體那樣容易直接「看見」結構。  </span></p></li><li><p><strong><span>複雜性（Complexity）</span></strong><span>：系統規模大、邏輯與互動關係複雜。  </span></p></li><li><p><strong><span>可變性（Changeability）</span></strong><span>：需求、技術、環境都會持續改變。  </span></p></li><li><p><strong><span>一致性需求（Conformity）</span></strong><span>：軟體必須配合外部規範、流程、法規與既有系統。  </span></p></li></ol><hr /><h3 id='3-如何定義一個高品質的應用軟體'><span>3. 如何定義一個高品質的應用軟體？</span></h3><p><strong><span>解答：</span></strong><span>高品質應用軟體通常具備以下特徵：</span></p><ul><li><p><strong><span>正確性</span></strong><span>：功能符合需求與規格。  </span></p></li><li><p><strong><span>可靠性</span></strong><span>：穩定、不易出錯。  </span></p></li><li><p><strong><span>可用性</span></strong><span>：容易學習、容易操作。  </span></p></li><li><p><strong><span>效率</span></strong><span>：效能與資源使用合理。  </span></p></li><li><p><strong><span>安全性</span></strong><span>：能保護資料與系統。  </span></p></li><li><p><strong><span>可維護性</span></strong><span>：容易修改、除錯、擴充。  </span></p></li><li><p><strong><span>可攜性／相容性</span></strong><span>：能在不同環境順利運作。  </span></p></li></ul><p><span>簡單一句話可寫成：</span><br/><strong><span>高品質軟體就是能正確滿足使用者需求，且同時具備可靠、易用、安全、有效率、易維護等特性。</span></strong></p><hr /><h3 id='4-專案管理中的三重限制triple-constraint理論是什麼'><span>4. 專案管理中的三重限制（triple constraint）理論是什麼？</span></h3><p><strong><span>解答：</span></strong><span>三重限制是指：</span></p><ol start='' ><li><p><strong><span>範疇（Scope）</span></strong></p></li><li><p><strong><span>時間（Time / Schedule）</span></strong></p></li><li><p><strong><span>成本（Cost）</span></strong></p></li></ol><p><span>三者彼此影響。通常：</span></p><ul><li><p><span>範疇增加，時間與成本往往也要增加；</span></p></li><li><p><span>時間壓縮，可能導致成本提高或品質下降；</span></p></li><li><p><span>成本受限，可能要縮小範疇或延長時程。  </span></p></li></ul><p><span>很多教材也會補充：</span><strong><span>品質（Quality）</span></strong><span>常被視為三重限制平衡後的結果。</span></p><hr /><h3 id='5-什麼是-scope-creep-與-ripple-effect'><span>5. 什麼是 scope creep 與 ripple effect？</span></h3><p><strong><span>解答：</span></strong></p><ul><li><p><strong><span>Scope creep（範疇蔓延）</span></strong><span>：專案進行過程中，需求或工作內容不斷擴大，但沒有正式控制、評估或調整資源。  </span></p></li><li><p><strong><span>Ripple effect（漣漪效應）</span></strong><span>：系統中某一處的小變更，會連帶影響其他模組、文件、測試與流程。  </span></p></li></ul><p><strong><span>關係：</span></strong><span></span><br/><span>當 scope creep 發生時，常常也會引發 ripple effect，造成成本增加、時程延誤與品質風險。</span></p><hr /><h3 id='6-請列出swebok中至少六個知識領域knowledge-areas-ka'><span>6. 請列出《SWEBOK》中至少六個知識領域（Knowledge Areas, KA）。</span></h3><p><strong><span>解答：</span></strong><span>常見可列出：</span></p><ol start='' ><li><p><strong><span>Software Requirements（軟體需求）</span></strong></p></li><li><p><strong><span>Software Design（軟體設計）</span></strong></p></li><li><p><strong><span>Software Construction（軟體建構）</span></strong></p></li><li><p><strong><span>Software Testing（軟體測試）</span></strong></p></li><li><p><strong><span>Software Maintenance（軟體維護）</span></strong></p></li><li><p><strong><span>Software Configuration Management（軟體組態管理）</span></strong></p></li><li><p><strong><span>Software Engineering Management（軟體工程管理）</span></strong></p></li><li><p><strong><span>Software Engineering Process（軟體工程流程）</span></strong></p></li><li><p><strong><span>Software Engineering Models and Methods（軟體工程模型與方法）</span></strong></p></li><li><p><strong><span>Software Quality（軟體品質）</span></strong></p></li></ol><p><span>題目只要求至少六個，寫六到八個即可。</span></p><hr /><h2 id='二軟體流程software-process'><span>二、軟體流程（Software Process）</span></h2><h3 id='7-請列出三種通用的軟體開發流程模型'><span>7. 請列出三種通用的軟體開發流程模型。</span></h3><p><strong><span>解答：</span></strong></p><ol start='' ><li><p><strong><span>瀑布模型（Waterfall Model）</span></strong></p></li><li><p><strong><span>增量式開發（Incremental Development）</span></strong></p></li><li><p><strong><span>重用導向軟體工程（Reuse-Oriented Software Engineering）</span></strong></p></li></ol><p><span>有些教材也會提演化式模型、螺旋模型，但若依常見教科書答法，上面三種最常見。</span></p><hr /><h3 id='8-所有軟體流程都共有的四個基本活動是什麼'><span>8. 所有軟體流程都共有的四個基本活動是什麼？</span></h3><p><strong><span>解答：</span></strong></p><ol start='' ><li><p><strong><span>軟體規格化（Software Specification）</span></strong></p></li><li><p><strong><span>軟體開發／實作（Software Development / Design and Implementation）</span></strong></p></li><li><p><strong><span>軟體驗證（Software Validation）</span></strong></p></li><li><p><strong><span>軟體演化（Software Evolution）</span></strong></p></li></ol><hr /><h3 id='9-請列出流程描述process-description定義中常見的組成要素'><span>9. 請列出流程描述（process description）定義中常見的組成要素。</span></h3><p><strong><span>解答：</span></strong><span>常見組成包括：</span></p><ul><li><p><strong><span>活動（Activities）</span></strong></p></li><li><p><strong><span>產品或產出物（Products / Deliverables）</span></strong></p></li><li><p><strong><span>角色（Roles）</span></strong></p></li><li><p><strong><span>前置條件與後置條件（Preconditions / Postconditions）</span></strong></p></li><li><p><strong><span>輸入與輸出（Inputs / Outputs）</span></strong></p></li><li><p><strong><span>里程碑（Milestones）</span></strong></p></li></ul><p><span>若考試要簡答，可寫成：</span><br/><strong><span>流程描述通常會定義活動、角色、輸入輸出、產出物與執行順序。</span></strong></p><hr /><h3 id='10-什麼是軟體工程中的-v-model'><span>10. 什麼是軟體工程中的 V model？</span></h3><p><strong><span>解答：</span></strong><span></span><br/><strong><span>V 模型（V-Model）</span></strong><span>是一種將開發階段與測試階段相互對應的軟體開發模型。  </span></p><p><span>左側通常代表：</span></p><ul><li><p><span>需求分析</span></p></li><li><p><span>系統設計</span></p></li><li><p><span>架構設計</span></p></li><li><p><span>詳細設計</span></p></li></ul><p><span>右側通常代表對應驗證活動：</span></p><ul><li><p><span>驗收測試</span></p></li><li><p><span>系統測試</span></p></li><li><p><span>整合測試</span></p></li><li><p><span>單元測試</span></p></li></ul><p><strong><span>核心觀念：</span></strong><span>越早定義開發內容，就要越早規劃對應的測試活動。  </span></p><hr /><h3 id='11-面對軟體變更不可避免的特性常用的兩種因應方式是什麼'><span>11. 面對軟體變更不可避免的特性，常用的兩種因應方式是什麼？</span></h3><p><strong><span>解答：</span></strong></p><ol start='' ><li><p><strong><span>變更避免（Change Avoidance）</span></strong><span>：在早期投入較多心力，盡量預先思考與降低後續大改動。  </span></p></li><li><p><strong><span>變更容忍（Change Tolerance）</span></strong><span>：接受需求會變，因此採用可快速回應變更的方法，例如敏捷開發。  </span></p></li></ol><hr /><h3 id='12-影響選擇-plan-based-或-agile-開發的主要因素有哪些'><span>12. 影響選擇 plan-based 或 agile 開發的主要因素有哪些？</span></h3><p><strong><span>解答：</span></strong></p><ol start='' ><li><p><strong><span>需求是否穩定</span></strong></p></li><li><p><strong><span>系統規模與複雜度</span></strong></p></li><li><p><strong><span>團隊規模</span></strong></p></li><li><p><strong><span>客戶參與程度</span></strong></p></li><li><p><strong><span>對文件與可追溯性的要求</span></strong></p></li><li><p><strong><span>法規／安全／品質要求</span></strong></p></li><li><p><strong><span>組織文化與團隊經驗</span></strong></p></li><li><p><strong><span>變更頻率與市場壓力</span></strong></p></li></ol><p><span>一般而言：</span></p><ul><li><p><strong><span>需求穩定、規範嚴格</span></strong><span>：較適合 plan-based。  </span></p></li><li><p><strong><span>需求常變、需要快速迭代</span></strong><span>：較適合 agile。  </span></p></li></ul><hr /><h2 id='三能力成熟度模型整合cmmi'><span>三、能力成熟度模型整合（CMMI）</span></h2><h3 id='13-sei-的-cmmi-v13-三種模型是什麼'><span>13. SEI 的 CMMI V1.3 三種模型是什麼？</span></h3><p><strong><span>解答：</span></strong></p><ol start='' ><li><p><strong><span>CMMI for Development（CMMI-DEV）</span></strong></p></li><li><p><strong><span>CMMI for Services（CMMI-SVC）</span></strong></p></li><li><p><strong><span>CMMI for Acquisition（CMMI-ACQ）</span></strong></p></li></ol><hr /><h3 id='14-sei-的-cmmi-中-staged-representation-與-continuous-representation-的差別是什麼'><span>14. SEI 的 CMMI 中 staged representation 與 continuous representation 的差別是什麼？</span></h3><p><strong><span>解答：</span></strong></p><ul><li><p><strong><span>Staged representation（分階段表示法）</span></strong><span>：以整體組織成熟度來看，強調</span><strong><span>成熟度等級（Maturity Levels）</span></strong><span>。  </span></p></li><li><p><strong><span>Continuous representation（連續表示法）</span></strong><span>：以各流程領域個別改善為主，強調</span><strong><span>能力等級（Capability Levels）</span></strong><span>。  </span></p></li></ul><p><span>簡單說：</span></p><ul><li><p><span>staged 看「組織整體到哪一級」；</span></p></li><li><p><span>continuous 看「某一流程能力做到多好」。</span></p></li></ul><hr /><h3 id='15-請列出-cmmi-v22-的五個成熟度等級maturity-levels-ml'><span>15. 請列出 CMMI V2.2 的五個成熟度等級（Maturity Levels, ML）。</span></h3><p><strong><span>解答：</span></strong></p><ol start='' ><li><p><strong><span>ML1 Initial（初始級）</span></strong></p></li><li><p><strong><span>ML2 Managed（管理級）</span></strong></p></li><li><p><strong><span>ML3 Defined（已定義級）</span></strong></p></li><li><p><strong><span>ML4 Quantitatively Managed（量化管理級）</span></strong></p></li><li><p><strong><span>ML5 Optimizing（最佳化級）</span></strong></p></li></ol><hr /><h3 id='16-在-cmmi-中什麼是-managed-process'><span>16. 在 CMMI 中，什麼是 Managed Process？</span></h3><p><strong><span>解答：</span></strong><span></span><br/><strong><span>Managed Process（已管理流程）</span></strong><span>是指流程已被規劃、執行、監控與控制，且能依政策執行並產生可管理的工作產品。  </span></p><p><span>重點是：</span><br/><strong><span>有規劃、有追蹤、有管控，不再是隨機做法。</span></strong></p><hr /><h3 id='17-在-cmmi-中什麼是-defined-process'><span>17. 在 CMMI 中，什麼是 Defined Process？</span></h3><p><strong><span>解答：</span></strong><span></span><br/><strong><span>Defined Process（已定義流程）</span></strong><span>是指流程已依照組織標準流程加以定義、文件化、標準化，並可依專案情況裁剪使用。  </span></p><p><span>重點是：</span><br/><strong><span>不只會管理，還已經形成組織層級的標準流程。</span></strong></p><hr /><h3 id='18-在-cmmi-中什麼是-quantitatively-managed-process'><span>18. 在 CMMI 中，什麼是 Quantitatively Managed Process？</span></h3><p><strong><span>解答：</span></strong><span></span><br/><strong><span>Quantitatively Managed Process（量化管理流程）</span></strong><span>是指利用量測資料與統計方法來管理流程與品質表現，使流程運作可預測。  </span></p><p><span>重點是：</span></p><ul><li><p><span>有量化指標  </span></p></li><li><p><span>會分析變異  </span></p></li><li><p><span>可根據數據做管理與預測  </span></p></li></ul><hr /><h3 id='19-在-cmmi-中process-institutionalization-的意義是什麼'><span>19. 在 CMMI 中，Process Institutionalization 的意義是什麼？</span></h3><p><strong><span>解答：</span></strong><span></span><br/><strong><span>流程制度化（Process Institutionalization）</span></strong><span>是指讓流程不只是「文件上存在」，而是被組織真正採用、支持、訓練、執行與持續維持。  </span></p><p><span>也就是說，流程要成為組織日常工作的固定做法，而不是臨時應付評鑑。</span></p><hr /><h3 id='20-請列出-cmmi-dev-v22-中至少五個實務領域practice-areas-pa'><span>20. 請列出 CMMI-DEV V2.2 中至少五個實務領域（Practice Areas, PA）。</span></h3><p><strong><span>解答：</span></strong><span>可列出例如：</span></p><ol start='' ><li><p><strong><span>Requirements Development and Management（需求開發與管理）</span></strong></p></li><li><p><strong><span>Estimation（估算）</span></strong></p></li><li><p><strong><span>Planning（規劃）</span></strong></p></li><li><p><strong><span>Peer Reviews（同儕審查）</span></strong></p></li><li><p><strong><span>Verification and Validation（驗證與確認）</span></strong></p></li><li><p><strong><span>Configuration Management（組態管理）</span></strong></p></li><li><p><strong><span>Process Quality Assurance（流程品質保證）</span></strong></p></li><li><p><strong><span>Risk and Opportunity Management（風險與機會管理）</span></strong></p></li></ol><p><span>只要列出五個以上即可。</span></p><hr /><h3 id='21-請概述-cmmi-dev-v22-中每個實務領域pa的組成要素'><span>21. 請概述 CMMI-DEV V2.2 中每個實務領域（PA）的組成要素。</span></h3><p><strong><span>解答：</span></strong><span></span><br/><span>每個 </span><strong><span>Practice Area（實務領域）</span></strong><span>通常包含：</span></p><ul><li><p><strong><span>名稱（Name）</span></strong></p></li><li><p><strong><span>目的／意圖（Intent）</span></strong></p></li><li><p><strong><span>價值（Value）</span></strong></p></li><li><p><strong><span>實務（Practices）</span></strong></p></li><li><p><strong><span>實務說明與範例（Practice Descriptions / Examples）</span></strong></p></li><li><p><strong><span>相關資訊或參考（Informative material）</span></strong></p></li></ul><hr /><h3 id='22-請概述-cmmi-dev-v22-中每個-practice-的組成要素'><span>22. 請概述 CMMI-DEV V2.2 中每個 practice 的組成要素。</span></h3><p><strong><span>解答：</span></strong><span></span><br/><span>每個 practice 通常可從以下面向描述：</span></p><ul><li><p><strong><span>Practice Statement（實務敘述）</span></strong></p></li><li><p><strong><span>Purpose / Intent（目的）</span></strong></p></li><li><p><strong><span>Subpractices or Example Activities（子實務或範例活動）</span></strong></p></li><li><p><strong><span>Typical Work Products（典型工作產品）</span></strong></p></li><li><p><strong><span>Guidance / Notes（執行說明）</span></strong></p></li></ul><hr /><h3 id='23-cmmi-dev-v22-定義了多少個-practice-group請簡述-practice-group-的意義'><span>23. CMMI-DEV V2.2 定義了多少個 Practice Group？請簡述 Practice Group 的意義。</span></h3><p><strong><span>解答：</span></strong><span></span><br/><span>CMMI V2.0/V2.2 常見整理中，實務領域會被歸類到數個 </span><strong><span>Practice Groups</span></strong><span>。課堂上通常重點不是死背數字，而是理解其意義。  </span></p><p><strong><span>Practice Group 的意義：</span></strong><span></span><br/><span>是把性質相近的實務領域分群，方便組織理解改善重點與管理架構。  </span></p><p><span>常見分群方向例如：</span></p><ul><li><p><span>Doing</span></p></li><li><p><span>Managing</span></p></li><li><p><span>Enabling</span></p></li><li><p><span>Improving</span></p></li></ul><blockquote><p><span>若老師特別要求「確切組數」，請以課堂教材版本為準；不同教材呈現方式可能略有差異。</span></p></blockquote><hr /><h3 id='24-請簡述你們小組負責報告的-pa-之名稱意圖與價值'><span>24. 請簡述你們小組負責報告的 PA 之名稱、意圖與價值。</span></h3><p><strong><span>解答：</span></strong><span></span><br/><span>這題屬於</span><strong><span>分組報告指定題</span></strong><span>，答案要依你們小組被分配到的 PA 而定。</span><br/><span>作答格式可寫成：</span></p><ul><li><p><strong><span>PA 名稱：</span></strong><span>例如 Requirements Development and Management  </span></p></li><li><p><strong><span>Intent（意圖）：</span></strong><span>確保需求被蒐集、分析、確認、管理並維持一致。  </span></p></li><li><p><strong><span>Value（價值）：</span></strong><span>降低需求錯誤、減少重工、提升產品符合需求的程度。  </span></p></li></ul><hr /><h3 id='25-請概述你們小組負責的-pa-中至少三項-practices'><span>25. 請概述你們小組負責的 PA 中至少三項 practices。</span></h3><p><strong><span>解答：</span></strong><span></span><br/><span>這題也要依你們小組分配到的 PA 作答。</span><br/><span>若以 </span><strong><span>Requirements Development and Management</span></strong><span> 為例，可寫：</span></p><ol start='' ><li><p><span>蒐集與分析利害關係人需求  </span></p></li><li><p><span>建立並維護需求可追溯性  </span></p></li><li><p><span>控制需求變更並確保一致性  </span></p></li></ol><hr /><h3 id='26-請寫出下列縮寫的全名與目的scampiidealpalpiid'><span>26. 請寫出下列縮寫的全名與目的：SCAMPI、IDEAL、PAL、PIID。</span></h3><p><strong><span>解答：</span></strong></p><h4 id='1-scampi'><span>(1) SCAMPI</span></h4><ul><li><p><strong><span>全名：</span></strong><span>Standard CMMI Appraisal Method for Process Improvement  </span></p></li><li><p><strong><span>目的：</span></strong><span>用來評估組織流程成熟度與改進狀況的正式評鑑方法。  </span></p></li></ul><h4 id='2-ideal'><span>(2) IDEAL</span></h4><ul><li><p><strong><span>全名：</span></strong><span>Initiating, Diagnosing, Establishing, Acting, Learning  </span></p></li><li><p><strong><span>目的：</span></strong><span>提供流程改善的循環式架構與步驟。  </span></p></li></ul><h4 id='3-pal'><span>(3) PAL</span></h4><ul><li><p><strong><span>全名：</span></strong><span>Process Asset Library  </span></p></li><li><p><strong><span>目的：</span></strong><span>儲存組織流程資產，如標準流程、範本、檢查表、最佳實務。  </span></p></li></ul><h4 id='4-piid'><span>(4) PIID</span></h4><ul><li><p><strong><span>全名：</span></strong><span>Practice Implementation Indicator Description  </span></p></li><li><p><strong><span>目的：</span></strong><span>用來呈現某項 CMMI 實務已被組織落實的證據。  </span></p></li></ul><hr /><h2 id='四敏捷軟體開發agile-software-development'><span>四、敏捷軟體開發（Agile Software Development）</span></h2><h3 id='27-什麼是敏捷軟體開發宣言manifesto-for-agile-software-development'><span>27. 什麼是敏捷軟體開發宣言（Manifesto for Agile Software Development）？</span></h3><p><strong><span>解答：</span></strong><span></span><br/><span>敏捷宣言的四大核心價值為：</span></p><ol start='' ><li><p><strong><span>個人與互動</span></strong><span> 高於 流程與工具  </span></p></li><li><p><strong><span>可運作的軟體</span></strong><span> 高於 詳盡的文件  </span></p></li><li><p><strong><span>顧客合作</span></strong><span> 高於 合約談判  </span></p></li><li><p><strong><span>回應變化</span></strong><span> 高於 遵循計畫  </span></p></li></ol><p><span>注意：不是說右邊不重要，而是說</span><strong><span>左邊更有價值</span></strong><span>。</span></p><hr /><h3 id='28-請列出至少五項敏捷方法的原則'><span>28. 請列出至少五項敏捷方法的原則。</span></h3><p><strong><span>解答：</span></strong><span>常見可列舉：</span></p><ol start='' ><li><p><span>以</span><strong><span>持續交付有價值的軟體</span></strong><span>來滿足顧客。  </span></p></li><li><p><span>歡迎即使在後期也出現的需求變更。  </span></p></li><li><p><span>頻繁交付可運作軟體。  </span></p></li><li><p><span>商業人員與開發者必須密切合作。  </span></p></li><li><p><span>以有動機的人員組成團隊並給予支持。  </span></p></li><li><p><span>面對面溝通是最有效的溝通方式。  </span></p></li><li><p><span>可運作的軟體是進度的主要衡量標準。  </span></p></li><li><p><span>追求永續開發節奏。  </span></p></li><li><p><span>持續重視技術卓越與良好設計。  </span></p></li><li><p><span>定期回顧並調整團隊作法。  </span></p></li></ol><hr /><h3 id='29-xpextreme-programming引入了哪些至少六項實務或技術'><span>29. XP（Extreme Programming）引入了哪些至少六項實務或技術？</span></h3><p><strong><span>解答：</span></strong><span>常見 XP 實務包括：</span></p><ol start='' ><li><p><strong><span>Pair Programming（雙人程式設計）</span></strong></p></li><li><p><strong><span>Test-Driven Development, TDD（測試驅動開發）</span></strong></p></li><li><p><strong><span>Continuous Integration（持續整合）</span></strong></p></li><li><p><strong><span>Refactoring（重構）</span></strong></p></li><li><p><strong><span>Simple Design（簡單設計）</span></strong></p></li><li><p><strong><span>Collective Code Ownership（集體程式碼擁有）</span></strong></p></li><li><p><strong><span>Small Releases（小規模頻繁發布）</span></strong></p></li><li><p><strong><span>On-site Customer（現場客戶）</span></strong></p></li><li><p><strong><span>Coding Standards（程式碼標準）</span></strong></p></li><li><p><strong><span>Sustainable Pace（可持續開發節奏）</span></strong></p></li></ol><hr /><h3 id='30-為什麼-scrum-在軟體開發實務界被廣泛採用'><span>30. 為什麼 Scrum 在軟體開發實務界被廣泛採用？</span></h3><p><strong><span>解答：</span></strong><span></span><br/><span>因為 Scrum 具有以下優點：</span></p><ul><li><p><span>架構簡單，容易理解與導入  </span></p></li><li><p><span>可快速回應需求變更  </span></p></li><li><p><span>透過短衝刺（Sprint）提升交付頻率  </span></p></li><li><p><span>角色、工件、儀式清楚  </span></p></li><li><p><span>透明度高，便於追蹤進度  </span></p></li><li><p><span>有助於團隊合作與持續改善  </span></p></li></ul><hr /><h3 id='31-哪些類型的系統特別適合採用敏捷開發'><span>31. 哪些類型的系統特別適合採用敏捷開發？</span></h3><p><strong><span>解答：</span></strong>
+<span>敏捷方法通常較適合：</span></p><ul><li><p><strong><span>需求容易變動</span></strong><span>的系統  </span></p></li><li><p><strong><span>需要快速上市</span></strong><span>的產品  </span></p></li><li><p><strong><span>使用者可頻繁參與回饋</span></strong><span>的系統  </span></p></li><li><p><strong><span>中小型團隊</span></strong><span>開發的應用  </span></p></li><li><p><strong><span>網頁、App、商業資訊系統</span></strong><span>等可逐步演進的產品  </span></p></li></ul><p><span>相對而言，若系統屬於：</span></p><ul><li><p><span>安全關鍵  </span></p></li><li><p><span>法規嚴格  </span></p></li><li><p><span>需高度可追溯文件</span><br/><span>則常需要搭配較嚴謹的流程控制。</span></p></li></ul><hr /><h3 id='32-敏捷軟體開發的四個實務問題是什麼'><span>32. 敏捷軟體開發的四個實務問題是什麼？</span></h3><p><strong><span>解答：</span></strong><span>常見可答：</span></p><ol start='' ><li><p><strong><span>維持顧客持續參與不容易</span></strong></p></li><li><p><strong><span>團隊成員經驗要求較高</span></strong></p></li><li><p><strong><span>文件可能不足</span></strong></p></li><li><p><strong><span>大型或分散式團隊導入較困難</span></strong></p></li></ol><p><span>也可延伸寫：</span></p><ul><li><p><span>組織文化若偏官僚，敏捷不易落地  </span></p></li><li><p><span>長期架構品質若控制不好，可能造成技術債</span></p></li></ul><hr /><h3 id='33-當決定是否採用敏捷方法時應該問哪三個問題'><span>33. 當決定是否採用敏捷方法時，應該問哪三個問題？</span></h3><p><strong><span>解答：</span></strong></p><ol start='' ><li><p><strong><span>客戶或使用者能否持續參與並快速回饋？</span></strong></p></li><li><p><strong><span>需求是否經常改變，且需要快速應變？</span></strong></p></li><li><p><strong><span>團隊是否具備足夠溝通能力、技術能力與自我管理能力？</span></strong></p></li></ol><p><span>也可以補充：</span></p><ul><li><p><span>是否需要大量正式文件？</span></p></li><li><p><span>是否受到法規或安全要求限制？</span></p></li></ul><hr /><h3 id='34-請畫出-scrum-工作流程說明三種角色三種工件與三種儀式'><span>34. 請畫出 Scrum 工作流程，說明三種角色、三種工件與三種儀式。</span></h3><p><strong><span>解答：</span></strong></p><h4 id='一三種角色3-roles'><span>（一）三種角色（3 Roles）</span></h4><ol start='' ><li><p><strong><span>Product Owner</span></strong></p></li><li><p><strong><span>Scrum Master</span></strong></p></li><li><p><strong><span>Developers / Development Team</span></strong></p></li></ol><h4 id='二三種工件3-artifacts'><span>（二）三種工件（3 Artifacts）</span></h4><ol start='' ><li><p><strong><span>Product Backlog</span></strong></p></li><li><p><strong><span>Sprint Backlog</span></strong></p></li><li><p><strong><span>Increment</span></strong></p></li></ol><h4 id='三三種儀式3-ceremonies'><span>（三）三種儀式（3 Ceremonies）</span></h4><ol start='' ><li><p><strong><span>Sprint Planning</span></strong></p></li><li><p><strong><span>Daily Scrum</span></strong></p></li><li><p><strong><span>Sprint Review / Sprint Retrospective</span></strong></p></li></ol><h4 id='四文字流程圖'><span>（四）文字流程圖</span></h4><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="text" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="text"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 17.400001px; left: 31.200012px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: medium;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: medium;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Product Backlog</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Sprint Planning</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Sprint Backlog</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Sprint Execution</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; ↙ &nbsp;  ↓ &nbsp; &nbsp; ↘</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Daily  Develop  Test</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Scrum</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Increment</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Sprint Review</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Sprint Retrospective</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  ↓</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Next Sprint</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 518px;"></div><div class="CodeMirror-gutters" style="display: none; height: 518px;"></div></div></div></pre><hr /><h3 id='35-請說明-agile-scrum-workflow-如何整合-kanban-的限制在製工作wip實務'><span>35. 請說明 Agile Scrum workflow 如何整合 Kanban 的「限制在製工作（WIP）」實務。</span></h3><p><strong><span>解答：</span></strong><span></span><br/><span>Scrum 原本就以 Sprint 控制工作量，而結合 Kanban 後，可以進一步在流程看板中設定 </span><strong><span>WIP（Work In Progress）上限</span></strong><span>，例如：</span></p><ul><li><p><span>開發中最多 3 件</span></p></li><li><p><span>測試中最多 2 件</span></p></li></ul><p><span>這樣做的好處是：</span></p><ol start='' ><li><p><span>避免同時開太多工作  </span></p></li><li><p><span>降低多工切換成本  </span></p></li><li><p><span>更快發現瓶頸  </span></p></li><li><p><span>提升流動效率與交付速度  </span></p></li></ol><p><span>因此 Scrum 結合 Kanban 後，會更重視</span><strong><span>流程可視化、拉式工作與流量控制</span></strong><span>。</span></p><hr /><h3 id='36-為什麼-scrumban-在-app-開發中被廣泛採用'><span>36. 為什麼 ScrumBan 在 APP 開發中被廣泛採用？</span></h3><p><strong><span>解答：</span></strong><span></span><br/><strong><span>ScrumBan</span></strong><span> 是 Scrum 與 Kanban 的結合，在 APP 開發常被採用，原因包括：</span></p><ol start='' ><li><p><strong><span>APP 需求變動快</span></strong><span>，適合 Scrum 的迭代開發  </span></p></li><li><p><strong><span>Bug、優化、小功能插單很多</span></strong><span>，適合 Kanban 的彈性流動管理  </span></p></li><li><p><strong><span>可同時保有 Sprint 節奏與看板透明度</span></strong></p></li><li><p><strong><span>能限制 WIP，避免團隊同時做太多事</span></strong></p></li><li><p><strong><span>適合持續更新與版本快速發布的產品型態</span></strong></p></li></ol><p><span>簡單說：</span><br/><strong><span>APP 開發既需要 Scrum 的節奏與角色分工，也需要 Kanban 的即時流量管理，所以 ScrumBan 很實用。</span></strong></p><hr /><h1 id='考前速記版超精簡'><span>考前速記版（超精簡）</span></h1><h2 id='1-三重限制'><span>1. 三重限制</span></h2><ul><li><p><span>範疇 Scope</span></p></li><li><p><span>時間 Time</span></p></li><li><p><span>成本 Cost</span></p></li></ul><h2 id='2-四個共同流程活動'><span>2. 四個共同流程活動</span></h2><ul><li><p><span>規格化</span></p></li><li><p><span>開發</span></p></li><li><p><span>驗證</span></p></li><li><p><span>演化</span></p></li></ul><h2 id='3-敏捷宣言四大價值'><span>3. 敏捷宣言四大價值</span></h2><ul><li><p><span>個人與互動 &gt; 流程與工具</span></p></li><li><p><span>可運作的軟體 &gt; 詳盡文件</span></p></li><li><p><span>顧客合作 &gt; 合約談判</span></p></li><li><p><span>回應變化 &gt; 遵循計畫</span></p></li></ul><h2 id='4-scrum-三三三'><span>4. Scrum 三三三</span></h2><ul><li><p><strong><span>三角色</span></strong><span>：PO、SM、Developers</span></p></li><li><p><strong><span>三工件</span></strong><span>：Product Backlog、Sprint Backlog、Increment</span></p></li><li><p><strong><span>三儀式</span></strong><span>：Sprint Planning、Daily Scrum、Sprint Review/Retrospective</span></p></li></ul><h2 id='5-cmmi-五成熟度'><span>5. CMMI 五成熟度</span></h2><ul><li><p><span>ML1 Initial</span></p></li><li><p><span>ML2 Managed</span></p></li><li><p><span>ML3 Defined</span></p></li><li><p><span>ML4 Quantitatively Managed</span></p></li><li><p><span>ML5 Optimizing</span></p></li></ul><hr /><h1 id='題目來源'><span>題目來源</span></h1><p><span>原始題目清單出自老師提供之 PDF：fileciteturn0file0L1-L40</span></p></div></div>
+
+<script>(function(){var e=document.body.parentElement,t=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(e,t,n){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var i=e.target;i&&i!=this;i=i.parentNode)if(i.matches(t)){!1===n.call(i,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)};function o(){return e.scrollTop}r("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),d(),!1}),r("click",".outline-item",function(e){var t=this.querySelector(".outline-label");if(location.hash=t.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),c(),n.add("outline-item-active")}});var a,s,l=function(){var e=o();n=null;for(var i=0;i<t.length&&t[i][1]-e<60;i++)n=t[i]},c=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},d=function(){if(n){c();var e=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(e)if(i){var t=e.closest(".outline-item-open>ul>.outline-item-wrapper");if(t)t.classList.add("outline-item-active");else{for(var r=(e=e.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(e=r).parentElement.closest(".outline-item-wrapper");e.classList.add("outline-item-active")}}else e.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(e){a&&clearTimeout(a),a=setTimeout(function(){l(),d()},300)});var u=function(){s=setTimeout(function(){!function(){t=[];var e=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");t.push([i,e+n.getBoundingClientRect().y])})}(),l(),d()},300)};window.addEventListener("resize",function(e){s&&clearTimeout(s),u()}),u()})();</script></body>
+</html>
